@@ -9,28 +9,29 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "./ui/sidebar";
+import { Link } from "react-router-dom";
 
 const NavSide = () => {
   //const { state, open, setOpen, toggleSidebar } = useSidebar();
   const items = [
     {
       title: "Home",
-      url: "#",
+      url: "/",
       icon: House,
     },
     {
       title: "Dashboard",
-      url: "#",
+      url: "/dashboard",
       icon: LayoutDashboard,
     },
     {
       title: "Inventory",
-      url: "#",
+      url: "/inventory",
       icon: ListPlus,
     },
     {
       title: "Products",
-      url: "#",
+      url: "/products",
       icon: FolderKanban,
     },
   ];
@@ -45,10 +46,14 @@ const NavSide = () => {
                 {items.map((item) => (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild>
-                      <a href={item.url}>
+                      {/* <a href={item.url}>
                         <item.icon />
                         <span>{item.title}</span>
-                      </a>
+                      </a> */}
+                      <Link to={item.url}>
+                        <item.icon />
+                        <span>{item.title}</span>
+                      </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}

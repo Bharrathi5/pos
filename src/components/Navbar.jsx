@@ -13,7 +13,7 @@ const Navbar = () => {
     <div className="flex items-center justify-between mb-5">
       <div className="flex items-center gap-2">
         <img
-          className="size-14 object-cover rounded-3xl cursor-pointer"
+          className="size-16 object-cover rounded-3xl cursor-pointer"
           src="src/assets/f231283243316f077677dd17397d5220.jpg"
           alt="logo"
         />
@@ -25,7 +25,7 @@ const Navbar = () => {
             <Avatar>
               <AvatarImage
                 src="src/assets/avatar.jpg"
-                className="size-12 object-cover rounded-full cursor-pointer hover: border-zinc-600 hover:border-2"
+                className="size-16 object-cover rounded-full cursor-pointer hover: border-zinc-600 hover:border-2"
               />
               <AvatarFallback>admin</AvatarFallback>
             </Avatar>
