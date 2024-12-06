@@ -42,7 +42,6 @@ const Navbar = () => {
               Team
             </DropdownMenuItem>
             <DropdownMenuItem className="text-red-600">
-              {" "}
               <LogOut />
               Logout
             </DropdownMenuItem>

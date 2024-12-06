@@ -9,7 +9,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ChevronDown, MoreHorizontal } from "lucide-react";
+import { Boxes, ChevronDown, MoreHorizontal } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -195,7 +195,10 @@ export default function ProductList() {
 
   return (
     <div className="w-3/4">
-      <h1 className="text-4xl my-10">Product list</h1>
+      <div className="flex items-center gap-5">
+        <Boxes className="size-10" />
+        <h1 className="text-4xl my-10">Add Inventory</h1>
+      </div>
       <div className="flex items-center py-4">
         <Input
           placeholder="Search by name"

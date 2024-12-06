@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./Navbar";
 import ProductList from "./ProductList";
-import { Home } from "lucide-react";
 import Inventory from "./Inventory";
 import Dashboard from "./Dashboard";
+import Home from "./Home";
 
 const Body = () => {
   return (

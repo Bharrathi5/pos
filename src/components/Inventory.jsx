@@ -15,18 +15,33 @@ import { Input } from "@/components/ui/input";
 import { Plus, Warehouse } from "lucide-react";
 
 const formSchema = z.object({
-  username: z
+  name: z
     .string()
     .min(2, {
-      message: "Username required",
+      message: "Name required",
     })
     .max(50),
+  brand: z
+    .string()
+    .min(2, {
+      message: "Brand required",
+    })
+    .max(50),
+  category: z
+    .string()
+    .min(2, {
+      message: "Category required",
+    })
+    .max(50),
+  description: z.string().max(50, {
+    message: "Cannot be more than 50 words",
+  }),
 });
 
 const Inventory = () => {
   const form = useForm({
     resolver: zodResolver(formSchema),
-    defaultValues: { username: "" },
+    defaultValues: { name: "", brand: "", category: "" },
   });
 
   const onSubmit = (data) => {
@@ -44,12 +59,12 @@ const Inventory = () => {
           <div className="flex w-full gap-10 justify-between">
             <FormField
               control={form.control}
-              name="username"
+              name="name"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Name*" className="w-80" {...field} />
+                    <Input placeholder="Name*" className="w-96" {...field} />
                   </FormControl>
                   {/* <FormDescription>
                   This is your public display name.
@@ -60,15 +75,15 @@ const Inventory = () => {
             />
             <FormField
               control={form.control}
-              name="username"
+              name="brand"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Brand</FormLabel>
                   <FormControl>
-                    <Input placeholder="Brand*" className="w-80" {...field} />
+                    <Input placeholder="Brand*" className="w-96" {...field} />
                   </FormControl>
                   {/* <FormDescription>
-                  This is your public display name.
+                  This is your tool brand.
                 </FormDescription> */}
                   <FormMessage />
                 </FormItem>
@@ -76,25 +91,45 @@ const Inventory = () => {
             />
             <FormField
               control={form.control}
-              name="username"
+              name="category"
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Category</FormLabel>
                   <FormControl>
                     <Input
                       placeholder="Category*"
-                      className="w-80"
+                      className="w-96"
                       {...field}
                     />
                   </FormControl>
                   {/* <FormDescription>
-                  This is your public display name.
+                  This is your tool category .
                 </FormDescription> */}
                   <FormMessage />
                 </FormItem>
               )}
             />
           </div>
+          <FormField
+            control={form.control}
+            name="description"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Description</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="Product Description"
+                    className="w-full"
+                    {...field}
+                  />
+                </FormControl>
+                {/* <FormDescription>
+                  This is your puroduct description.
+                </FormDescription> */}
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
           <Button type="submit">
             <Plus />
