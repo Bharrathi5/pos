@@ -9,7 +9,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react";
+import { ChevronDown, MoreHorizontal } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -33,25 +33,54 @@ import {
 } from "@/components/ui/table";
 
 const data = [
-  { id: "m5gr84i9", amount: 316, status: "success", email: "ken99@yahoo.com" },
-  { id: "3u1reuv4", amount: 242, status: "success", email: "Abe45@gmail.com" },
   {
-    id: "derv1ws0",
-    amount: 837,
-    status: "processing",
-    email: "Monserrat44@gmail.com",
+    name: "Power Drill",
+    brand: "Bosch",
+    category: "Tools",
+    sku: "PD-1",
+    description: "Heavy duty power drill",
   },
   {
-    id: "5kma53ae",
-    amount: 874,
-    status: "success",
-    email: "Silas22@gmail.com",
+    name: "Power Drill",
+    brand: "Bosch",
+    category: "Tools",
+    sku: "PD-2",
+    description: "Heavy duty power drill",
   },
   {
-    id: "bhqecj4p",
-    amount: 721,
-    status: "failed",
-    email: "carmella@hotmail.com",
+    name: "Power Drill",
+    brand: "Bosch",
+    category: "Tools",
+    sku: "PD-3",
+    description: "Heavy duty power drill",
+  },
+  {
+    name: "Power Drill",
+    brand: "Bosch",
+    category: "Tools",
+    sku: "PD-4",
+    description: "Heavy duty power drill",
+  },
+  {
+    name: "Power Drill",
+    brand: "Bosch",
+    category: "Tools",
+    sku: "PD-5",
+    description: "Heavy duty power drill",
+  },
+  {
+    name: "Power Drill",
+    brand: "Bosch",
+    category: "Tools",
+    sku: "PD-6",
+    description: "Heavy duty power drill",
+  },
+  {
+    name: "Power Drill",
+    brand: "Bosch",
+    category: "Tools",
+    sku: "PD-7",
+    description: "Heavy duty power drill",
   },
 ];
 
@@ -78,36 +107,42 @@ const columns = [
     enableHiding: false,
   },
   {
-    accessorKey: "status",
-    header: "Status",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("status")}</div>
-    ),
+    accessorKey: "name",
+    header: "Name",
+    cell: ({ row }) => <div className="capitalize">{row.getValue("name")}</div>,
   },
   {
-    accessorKey: "email",
+    accessorKey: "brand",
     header: ({ column }) => (
       <Button
         variant="ghost"
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
-        Email <ArrowUpDown />
+        Brand
       </Button>
     ),
-    cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
+    cell: ({ row }) => <div className="lowercase">{row.getValue("brand")}</div>,
   },
   {
-    accessorKey: "amount",
-    header: () => <div className="text-right">Amount</div>,
-    cell: ({ row }) => {
-      const amount = parseFloat(row.getValue("amount"));
-      const formatted = new Intl.NumberFormat("en-US", {
-        style: "currency",
-        currency: "USD",
-      }).format(amount);
-      return <div className="text-right font-medium">{formatted}</div>;
-    },
+    accessorKey: "category",
+    header: "Category",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("category")}</div>
+    ),
   },
+  {
+    accessorKey: "sku",
+    header: "SKU",
+    cell: ({ row }) => <div className="capitalize">{row.getValue("sku")}</div>,
+  },
+  {
+    accessorKey: "description",
+    header: "Description",
+    cell: ({ row }) => (
+      <div className="capitalize">{row.getValue("description")}</div>
+    ),
+  },
+
   {
     id: "actions",
     enableHiding: false,
@@ -126,11 +161,11 @@ const columns = [
             <DropdownMenuItem
               onClick={() => navigator.clipboard.writeText(payment.id)}
             >
-              Copy payment ID
+              Copy SKU
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <DropdownMenuItem>View Product</DropdownMenuItem>
+            <DropdownMenuItem>View Brand</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );
@@ -160,12 +195,13 @@ export default function ProductList() {
 
   return (
     <div className="w-3/4">
+      <h1 className="text-4xl my-10">Product list</h1>
       <div className="flex items-center py-4">
         <Input
-          placeholder="Filter emails..."
-          value={table.getColumn("email")?.getFilterValue() || ""}
+          placeholder="Search by name"
+          value={table.getColumn("name")?.getFilterValue() || ""}
           onChange={(e) =>
-            table.getColumn("email")?.setFilterValue(e.target.value)
+            table.getColumn("name")?.setFilterValue(e.target.value)
           }
           className="max-w-sm"
         />

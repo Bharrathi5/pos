@@ -1,4 +1,4 @@
-import { FolderKanban, LayoutDashboard, ListPlus } from "lucide-react";
+import { FolderKanban, LayoutDashboard, ListPlus, House } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -13,6 +13,11 @@ import {
 const NavSide = () => {
   //const { state, open, setOpen, toggleSidebar } = useSidebar();
   const items = [
+    {
+      title: "Home",
+      url: "#",
+      icon: House,
+    },
     {
       title: "Dashboard",
       url: "#",
