@@ -6,6 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { brand1, brand2, brand3, brand4, brand5 } from "@/constants/images";
 
 const BrandCarousal = () => {
   return (
@@ -21,7 +22,7 @@ const BrandCarousal = () => {
             <Card>
               <CardContent className="flex aspect-square items-center justify-center p-6">
                 {/* <span className="text-3xl font-semibold"> 1</span> */}
-                <img src="src/assets/brand1.jpeg" />
+                <img src={brand1} />
               </CardContent>
             </Card>
           </div>
@@ -30,7 +31,7 @@ const BrandCarousal = () => {
           <div className="p-1">
             <Card>
               <CardContent className="flex aspect-square items-center justify-center p-6">
-                <img src="src/assets/brand2.jpg" />
+                <img src={brand2} />
               </CardContent>
             </Card>
           </div>
@@ -39,7 +40,7 @@ const BrandCarousal = () => {
           <div className="p-1">
             <Card>
               <CardContent className="flex aspect-square items-center justify-center p-6">
-                <img src="src/assets/brand3.jpg" />
+                <img src={brand3} />
               </CardContent>
             </Card>
           </div>
@@ -48,7 +49,7 @@ const BrandCarousal = () => {
           <div className="p-1">
             <Card>
               <CardContent className="flex aspect-square items-center justify-center p-6">
-                <img src="src/assets/brand4.png" />
+                <img src={brand4} />
               </CardContent>
             </Card>
           </div>
@@ -57,7 +58,7 @@ const BrandCarousal = () => {
           <div className="p-1">
             <Card>
               <CardContent className="flex aspect-square items-center justify-center p-6">
-                <img src="src/assets/brand5.webp" />
+                <img src={brand5} />
               </CardContent>
             </Card>
           </div>

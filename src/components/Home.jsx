@@ -1,3 +1,4 @@
+import { poster } from "@/constants/images";
 import BrandCarousal from "./BrandCarousal";
 
 const Home = () => {
@@ -20,7 +21,7 @@ const Home = () => {
         <div className="w-7/12">
           <img
             className="w-full rounded-3xl object-cover"
-            src="src/assets/tools.avif"
+            src={poster}
             alt="poster"
           />
         </div>
