@@ -42,42 +42,42 @@ const data = [
   },
   {
     name: "Power Drill",
-    brand: "Bosch",
+    brand: "DeWalt",
     category: "Tools",
     sku: "PD-2",
     description: "Heavy duty power drill",
   },
   {
     name: "Power Drill",
-    brand: "Bosch",
+    brand: "Ridgid",
     category: "Tools",
     sku: "PD-3",
     description: "Heavy duty power drill",
   },
   {
     name: "Power Drill",
-    brand: "Bosch",
+    brand: "Ryobi",
     category: "Tools",
     sku: "PD-4",
     description: "Heavy duty power drill",
   },
   {
     name: "Power Drill",
-    brand: "Bosch",
+    brand: "Festool",
     category: "Tools",
     sku: "PD-5",
     description: "Heavy duty power drill",
   },
   {
     name: "Power Drill",
-    brand: "Bosch",
+    brand: "Ridgid",
     category: "Tools",
     sku: "PD-6",
     description: "Heavy duty power drill",
   },
   {
     name: "Power Drill",
-    brand: "Bosch",
+    brand: "Dewalt",
     category: "Tools",
     sku: "PD-7",
     description: "Heavy duty power drill",
@@ -194,10 +194,10 @@ export default function ProductList() {
   });
 
   return (
-    <div className="w-3/4">
+    <div className="md:w-3/4">
       <div className="flex items-center gap-5">
         <Boxes className="size-10" />
-        <h1 className="text-4xl my-10">Add Inventory</h1>
+        <h1 className="text-4xl my-10">Products</h1>
       </div>
       <div className="flex items-center py-4">
         <Input

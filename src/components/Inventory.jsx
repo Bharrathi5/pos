@@ -56,7 +56,7 @@ const Inventory = () => {
       </div>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <div className="flex w-full gap-10 justify-between">
+          <div className="flex md:flex-row flex-col justify-between">
             <FormField
               control={form.control}
               name="name"
@@ -64,7 +64,11 @@ const Inventory = () => {
                 <FormItem>
                   <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Name*" className="w-96" {...field} />
+                    <Input
+                      placeholder="Name*"
+                      className="w-full md:w-96"
+                      {...field}
+                    />
                   </FormControl>
                   {/* <FormDescription>
                   This is your public display name.
@@ -80,7 +84,11 @@ const Inventory = () => {
                 <FormItem>
                   <FormLabel>Brand</FormLabel>
                   <FormControl>
-                    <Input placeholder="Brand*" className="w-96" {...field} />
+                    <Input
+                      placeholder="Brand*"
+                      className="w-full md:w-96"
+                      {...field}
+                    />
                   </FormControl>
                   {/* <FormDescription>
                   This is your tool brand.
@@ -98,7 +106,7 @@ const Inventory = () => {
                   <FormControl>
                     <Input
                       placeholder="Category*"
-                      className="w-96"
+                      className="w-full md:w-96"
                       {...field}
                     />
                   </FormControl>

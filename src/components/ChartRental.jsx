@@ -41,7 +41,7 @@ const chartConfig = {
 const ChartRental = () => {
   return (
     <div>
-      <Card className="size-96">
+      <Card className="md:size-96 mb-10">
         <CardHeader>
           <CardTitle>Rental in and Out</CardTitle>
           <CardDescription>January - June 2024</CardDescription>

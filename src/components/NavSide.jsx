@@ -8,11 +8,12 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  useSidebar,
 } from "./ui/sidebar";
 import { Link } from "react-router-dom";
 
 const NavSide = () => {
-  //const { state, open, setOpen, toggleSidebar } = useSidebar();
+  const { toggleSidebar } = useSidebar();
   const items = [
     {
       title: "Home",
@@ -44,12 +45,8 @@ const NavSide = () => {
             <SidebarGroupContent>
               <SidebarMenu>
                 {items.map((item) => (
-                  <SidebarMenuItem key={item.title}>
+                  <SidebarMenuItem key={item.title} onClick={toggleSidebar}>
                     <SidebarMenuButton asChild>
-                      {/* <a href={item.url}>
-                        <item.icon />
-                        <span>{item.title}</span>
-                      </a> */}
                       <Link to={item.url}>
                         <item.icon />
                         <span>{item.title}</span>

@@ -10,7 +10,7 @@ const Dashboard = () => {
         <ChartLine className="size-10" />
         <h1 className="text-4xl my-10">Sales Analytics</h1>
       </div>
-      <div className="flex gap-16 justify-around">
+      <div className="flex flex-col md:flex-row gap-16 justify-around">
         <ChartSales />
         <ChartRevenue />
         <ChartRental />

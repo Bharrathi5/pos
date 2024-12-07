@@ -34,7 +34,7 @@ const chartConfig = {
 const ChartSales = () => {
   return (
     <div>
-      <Card className="flex flex-col size-96">
+      <Card className="flex flex-col md:size-96 mb-10">
         <CardHeader className="items-center pb-0">
           <CardTitle>Total Sales</CardTitle>
           <CardDescription>January - June 2024</CardDescription>

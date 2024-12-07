@@ -37,7 +37,7 @@ const chartConfig = {
 const ChartRevenue = () => {
   return (
     <div>
-      <Card className="size-96">
+      <Card className="md:size-96 mb-10">
         <CardHeader>
           <CardTitle>Revenue</CardTitle>
           <CardDescription>
