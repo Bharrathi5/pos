@@ -13,7 +13,13 @@ import {
 import { Link } from "react-router-dom";
 
 const NavSide = () => {
-  const { toggleSidebar } = useSidebar();
+  const { isMobile, openMobile, setOpenMobile } = useSidebar();
+
+  const handleClick = () => {
+    if (isMobile) {
+      setOpenMobile(!openMobile);
+    }
+  };
   const items = [
     {
       title: "Home",
@@ -45,8 +51,8 @@ const NavSide = () => {
             <SidebarGroupContent>
               <SidebarMenu>
                 {items.map((item) => (
-                  <SidebarMenuItem key={item.title} onClick={toggleSidebar}>
-                    <SidebarMenuButton asChild>
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton asChild onClick={handleClick}>
                       <Link to={item.url}>
                         <item.icon />
                         <span>{item.title}</span>
